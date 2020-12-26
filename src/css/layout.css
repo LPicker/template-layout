@@ -82,6 +82,52 @@ nav ul > li.active {
   color: #fcf332;
 }
 
+/* banner */
+.banner-container img {
+  display: block;
+  width: 100%;
+}
+
+.section-heading::after {
+  content: "";
+  display: block;
+  height: 40px;
+  background-image: url(../images/section-heading-bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.section-body {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.section-body .card-item {
+  display: flex;
+  width: calc(50% - 36px);
+  justify-content: space-between;
+}
+.section-body .card-item img,
+.section-body .card-item dl {
+  width: calc(50% - 10px);
+}
+.section-body .card-item dt {
+  height: 29px;
+  line-height: 29px;
+  background-color: var(--base-color);
+  border-radius: 5px;
+  padding-left: 20px;
+  font-size: 17px;
+  font-weight: bold;
+  color: var(--text-reverse-color);
+}
+.section-body .card-item dd {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 0;
+  line-height: 42px;
+}
+
 /* footer */
 .brand-features {
   background-color: #009a52;
@@ -96,25 +142,33 @@ nav ul > li.active {
   width: 136px;
   height: 184px;
   text-align: center;
-  background-image: url(../images/features.jpg);
+  color: var(--text-reverse-color);
+}
+.brand-features .feature::before {
+  content: "";
+  display: block;
+  margin-top: 10px;
+  height: calc(100% - 56px);
+  text-align: center;
   background-repeat: no-repeat;
+  background-position: center;
   color: var(--text-reverse-color);
 }
 
-.brand-features .feature1 {
-  background-position: 0 center;
+.brand-features .feature1::before {
+  background-image: url(../images/feature1.jpg);
 }
 
-.brand-features .feature2 {
-  background-position: 0 center;
+.brand-features .feature2::before {
+  background-image: url(../images/feature2.jpg);
 }
 
-.brand-features .feature3 {
-  background-position: 0 center;
+.brand-features .feature3::before {
+  background-image: url(../images/feature3.jpg);
 }
 
-.brand-features .feature4 {
-  background-position: 0 center;
+.brand-features .feature4::before {
+  background-image: url(../images/feature4.jpg);
 }
 
 .brand-features .feature > img {
@@ -125,6 +179,14 @@ nav ul > li.active {
 footer {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.sitemap-item dt {
+  font-size: larger;
+}
+.sitemap-item dd {
+  margin-left: 0;
 }
 
 footer ul {
