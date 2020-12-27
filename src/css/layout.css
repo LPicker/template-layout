@@ -7,12 +7,22 @@ body {
   margin: 0;
 }
 
+.flex-columns {
+  display: flex;
+  justify-content: space-between;
+}
+a{text-decoration:none;}
 .t-c {
   text-align: center;
 }
-
+.t-r {
+  text-align: right;
+}
+.radius-8 {
+  border-radius: 8px;
+}
 .main-container {
-  width: 1200px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -82,50 +92,9 @@ nav ul > li.active {
   color: #fcf332;
 }
 
-/* banner */
-.banner-container img {
-  display: block;
-  width: 100%;
-}
-
-.section-heading::after {
-  content: "";
-  display: block;
-  height: 40px;
-  background-image: url(../images/section-heading-bg.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.section-body {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.section-body .card-item {
-  display: flex;
-  width: calc(50% - 36px);
-  justify-content: space-between;
-}
-.section-body .card-item img,
-.section-body .card-item dl {
-  width: calc(50% - 10px);
-}
-.section-body .card-item dt {
-  height: 29px;
-  line-height: 29px;
-  background-color: var(--base-color);
-  border-radius: 5px;
-  padding-left: 20px;
-  font-size: 17px;
-  font-weight: bold;
+nav ul > li > a{
+  font-size: 18px;
   color: var(--text-reverse-color);
-}
-.section-body .card-item dd {
-  display: flex;
-  justify-content: space-between;
-  margin-left: 0;
-  line-height: 42px;
 }
 
 /* footer */
@@ -135,7 +104,7 @@ nav ul > li.active {
 
 .brand-features .main-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .brand-features .feature {
@@ -182,27 +151,45 @@ footer {
   align-items: center;
 }
 
+.sitemap-wrapper {
+  display: flex;
+  width: 450px;
+  justify-content: space-between;
+}
 .sitemap-item dt {
-  font-size: larger;
+  margin-bottom: 34px;
+  font-size: 20px;
+  font-weight: bold;
 }
 .sitemap-item dd {
   margin-left: 0;
+  line-height: 34px;
 }
 
 footer ul {
   list-style: none;
 }
 
+footer ul li {
+  padding-left: 30px;
+  background-image: url(../images/icons-contact.jpg);
+  background-repeat: no-repeat;
+  line-height: 30px;
+}
+
 .contact-info-wrapper .phone {
   font-size: 18px;
+  background-position: 0 2px;
 }
 
 .contact-info-wrapper .working-hours {
   font-size: 16px;
+  background-position: 0 -32px;
 }
 
-.contact-info-wrapper .phone {
+.contact-info-wrapper .email {
   font-size: 16px;
+  background-position: 0 -60px;
 }
 
 .copyright-wrapper {

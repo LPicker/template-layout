@@ -15,6 +15,18 @@ const getFileStr = (path) => {
   return str;
 };
 
+const pages = fs.readdirSync(path.resolve(__dirname, "src/pages"));
+const htmls = pages.map((page) => {
+  return new htmlWebpackPlugin({
+    filename: "pages/" + page,
+    template: "src/pages/" + page,
+    inject: false,
+    minify: false,
+    header: getFileStr("src/layout/header.html"),
+    footer: getFileStr("src/layout/footer.html"),
+  });
+});
+
 module.exports = {
   mode: "development",
   // entry: './src/index.js',
@@ -41,12 +53,7 @@ module.exports = {
       ],
       path.resolve(__dirname, "./")
     ),
-    new htmlWebpackPlugin({
-      template: "src/pages/index.html",
-      minify: false,
-      header: getFileStr("src/layout/header.html"),
-      footer: getFileStr("src/layout/footer.html"),
-    }),
+    ...htmls,
     new HtmlBeautifyPlugin({
       config: {
         html: {
