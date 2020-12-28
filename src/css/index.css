@@ -55,7 +55,7 @@
 .hot-products-container .card-item {
   display: block;
   margin: 8px auto;
-  width: calc(20% - 7px);
+  width: calc(25% - 7px);
   background-color: #fff;
 }
 .hot-products-container .card-item img {

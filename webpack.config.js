@@ -41,6 +41,19 @@ module.exports = {
     compress: true,
     hot: true,
   },
+  module: {
+    rules: [{
+      test: /\.css$/,
+      use: "css-loader"
+    },
+    {
+      test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      loader: 'url-loader',
+      options: {
+        limit: 10000
+      }
+    }]
+  },
   plugins: [
     new CleanWebpackPlugin({
       root: path.resolve(__dirname, "dist"),

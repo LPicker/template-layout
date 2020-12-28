@@ -4,49 +4,49 @@
 .breadcrumbs .item + .item::before {
   content: ">";
 }
-.product-lib-container {
+.lanmu-container {
   padding: 20px 0;
 }
-.product-lib-container nav {
+.lanmu-container nav {
   background: none;
 }
-.product-lib-container nav ul {
+.lanmu-container nav ul {
   display: block;
   margin: 0;
   overflow: hidden;
 }
-.product-lib-container nav li {
+.lanmu-container nav li {
   width: 238px;
   height: 40px;
   line-height: 40px;
   background-color: var(--base-color);
 }
-.product-lib-container nav li + li {
+.lanmu-container nav li + li {
   margin-top: 1px;
 }
-.product-lib-container nav .active {
+.lanmu-container nav .active {
   background-color: #f39801;
   color: var(--text-reverse-color);
 }
 
-.product-lib-container .table-container {
+.lanmu-container .table-container {
   overflow: hidden;
   flex: 1;
   margin-left: 12px;
 }
 
-.product-lib-container table {
+.lanmu-container table {
   width: 100%;
   border-collapse: collapse;
   border: 1px solid #eee;
 }
-.product-lib-container th,
-.product-lib-container td {
+.lanmu-container th,
+.lanmu-container td {
   border: 1px solid #eee;
   border-width: 1px 0;
   padding: 20px 16px;
 }
-.product-lib-container th {
+.lanmu-container th {
   background-color: var(--base-color);
   color: var(--text-reverse-color);
   text-align: left;
