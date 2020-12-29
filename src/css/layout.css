@@ -68,11 +68,11 @@ header {
 .contact-wrapper {
 }
 
-nav {
+.nav-container {
   background-image: linear-gradient(#5daa58, #018b3e);
 }
 
-nav ul {
+.nav-container ul {
   display: flex;
   list-style: none;
   padding: 0;
@@ -80,19 +80,19 @@ nav ul {
   color: var(--text-reverse-color);
 }
 
-nav ul > li {
+.nav-container ul > li {
   width: 150px;
   height: 60px;
   line-height: 60px;
   text-align: center;
 }
 
-nav ul > li.active {
+.nav-container ul > li.active {
   background-color: #01853c;
   color: #fcf332;
 }
 
-nav ul > li > a{
+.nav-container ul > li > a{
   font-size: 18px;
   color: var(--text-reverse-color);
 }

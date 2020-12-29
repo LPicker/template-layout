@@ -8,6 +8,10 @@
   background-color: #cae5c6;
 }
 
+.section-heading {
+  margin-top: 46px;
+}
+
 .section-heading::after {
   content: "";
   display: block;
@@ -22,15 +26,18 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
 .section-body .card-item {
   display: flex;
   width: calc(50% - 36px);
   justify-content: space-between;
 }
+
 .section-body .card-item img,
 .section-body .card-item dl {
   width: calc(50% - 10px);
 }
+
 .section-body .card-item dt {
   height: 29px;
   line-height: 29px;
@@ -41,23 +48,26 @@
   font-weight: bold;
   color: var(--text-reverse-color);
 }
-.section-body .card-item dd {
+
+.section-body .card-item dd>a {
   display: flex;
   justify-content: space-between;
   margin-left: 0;
-  line-height: 42px;
+  line-height: 40px;
 }
 
 /* 热销产品 */
-.hot-products-container .section-body{
+.hot-products-container .section-body {
   padding: 36px 0 40px;
 }
+
 .hot-products-container .card-item {
   display: block;
   margin: 8px auto;
   width: calc(25% - 7px);
   background-color: #fff;
 }
+
 .hot-products-container .card-item img {
   display: block;
   border-radius: 1px;
@@ -68,6 +78,7 @@
 .hot-products-container .card-desc-container {
   padding: 8px 10px;
 }
+
 .hot-products-container .card-desc-container strong {
   background-color: var(--base-color);
   color: var(--text-reverse-color);
@@ -77,6 +88,7 @@
 .news-container .section-body {
   flex-wrap: initial;
 }
+
 .news-container .left-box img {
   height: 431px;
 }
@@ -89,10 +101,12 @@
   display: flex;
   align-items: center;
 }
+
 .news-container .date-wrapper {
   position: relative;
   padding-right: 11px;
 }
+
 .news-container .date-wrapper::after {
   content: "";
   position: absolute;
@@ -102,12 +116,15 @@
   height: 45px;
   background: #bfbfbf;
 }
+
 .news-container .date-wrapper strong {
   font-size: 22px;
 }
+
 .news-container .content-wrapper {
   margin-left: 20px;
 }
+
 .news-container .content-wrapper .heading {
   font-weight: bold;
 }
@@ -116,6 +133,7 @@
 .corporate-logo-container .section-body {
   padding: 30px 0 80px;
 }
+
 .corporate-logo-container .logo-item {
   width: 25%;
   display: flex;
@@ -130,14 +148,17 @@
 .links-container .section-body {
   justify-content: left;
 }
+
 .links-container .link-item {
   padding: 25px 0;
   font-size: 24px;
 }
-.links-container .link-item + .link-item {
+
+.links-container .link-item+.link-item {
   margin-left: 36px;
 }
-.links-container .link-item a{
+
+.links-container .link-item a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;

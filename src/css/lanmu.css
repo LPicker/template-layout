@@ -7,24 +7,29 @@
 .lanmu-container {
   padding: 20px 0;
 }
-.lanmu-container nav {
+.lanmu-container .sidebar {
   background: none;
 }
-.lanmu-container nav ul {
+.lanmu-container .sidebar ul {
   display: block;
+  list-style: none;
+  padding: 0;
   margin: 0;
   overflow: hidden;
+  font-size: 18px;
+  color: var(--text-reverse-color);
 }
-.lanmu-container nav li {
+.lanmu-container .sidebar li {
   width: 238px;
   height: 40px;
   line-height: 40px;
+  text-align: center;
   background-color: var(--base-color);
 }
-.lanmu-container nav li + li {
+.lanmu-container .sidebar li + li {
   margin-top: 1px;
 }
-.lanmu-container nav .active {
+.lanmu-container .sidebar .active {
   background-color: #f39801;
   color: var(--text-reverse-color);
 }
@@ -37,6 +42,7 @@
 
 .lanmu-container table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   border: 1px solid #eee;
 }
@@ -50,4 +56,7 @@
   background-color: var(--base-color);
   color: var(--text-reverse-color);
   text-align: left;
+}
+.pagination-container{
+  margin-top: 20px;
 }
