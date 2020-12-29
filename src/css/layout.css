@@ -1,17 +1,31 @@
 :root {
   --base-color: #009a44;
+  --primary-color: #f39801;
   --text-reverse-color: #fefefe;
+
+  --base-font-color: #1a1a1a;
+  --light-font-color: #666;
 }
 
 body {
   margin: 0;
+  color: var(--base-font-color);
 }
 
 .flex-columns {
   display: flex;
   justify-content: space-between;
 }
-a{text-decoration:none;}
+a {
+  color: var(--base-font-color);
+}
+a,
+a:hover {
+  text-decoration: none;
+}
+.auxiliary-color {
+  color: var(--light-font-color);
+}
 .t-c {
   text-align: center;
 }
@@ -22,7 +36,11 @@ a{text-decoration:none;}
   border-radius: 8px;
 }
 .main-container {
-  width: 1000px;
+  width: 1450px;
+  margin: 0 auto;
+}
+.lianxi-container {
+  width: 500px;
   margin: 0 auto;
 }
 
@@ -47,7 +65,7 @@ header {
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 12px 8px;
-  width: 486px;
+  width: 446px;
   height: var(--height);
   box-sizing: border-box;
   border: 1px solid var(--base-color);
@@ -81,7 +99,7 @@ header {
 }
 
 .nav-container ul > li {
-  width: 150px;
+  width: 250px;
   height: 60px;
   line-height: 60px;
   text-align: center;
@@ -89,12 +107,22 @@ header {
 
 .nav-container ul > li.active {
   background-color: #01853c;
+}
+
+.nav-container ul > li.active > a{
   color: #fcf332;
 }
 
-.nav-container ul > li > a{
+.nav-container ul > li > a {
   font-size: 18px;
   color: var(--text-reverse-color);
+}
+.breadcrumbs {
+  margin: 20px auto;
+}
+.breadcrumbs .item + .item::before {
+  content: ">";
+  padding-right: 4px;
 }
 
 /* footer */
@@ -149,12 +177,16 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 80px 0 50px;
 }
 
 .sitemap-wrapper {
   display: flex;
   width: 450px;
   justify-content: space-between;
+}
+.sitemap-item {
+  margin-bottom: 0;
 }
 .sitemap-item dt {
   margin-bottom: 34px;
@@ -163,6 +195,7 @@ footer {
 }
 .sitemap-item dd {
   margin-left: 0;
+  margin-bottom: 0;
   line-height: 34px;
 }
 
@@ -195,4 +228,8 @@ footer ul li {
 .copyright-wrapper {
   line-height: 50px;
   background-color: #e6ffdf;
+}
+
+.p-text{
+  text-indent:2em;
 }

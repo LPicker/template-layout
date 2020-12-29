@@ -1,15 +1,30 @@
 const path = require("path");
 const fs = require("fs");
+const cheerio = require('cheerio');
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TransferWebpackPlugin = require("transfer-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlBeautifyPlugin = require("@nurminen/html-beautify-webpack-plugin");
 
-const getFileStr = (path) => {
+const getFileStr = (path, htmlName) => {
   let str = "";
   try {
     str = fs.readFileSync(path, "utf-8");
+    const $ = cheerio.load(str);
+    const oldNavHtml = cheerio.html($(".nav-container"));
+    const anchors = $(".nav-container a");
+    for (let i = 0; i < anchors.length; i++) {
+      const a = anchors[i];
+      if (a.attribs.href === htmlName) {
+        a.parent.attribs.class = "active";
+        $(a.parent).html($(a).text());
+        break;
+      }
+    }
+    const newNavHtml = cheerio.html($(".nav-container"));
+    str = str.replace(oldNavHtml, newNavHtml);
   } catch (err) {
+    console.err(err)
   }
   return str;
 };
@@ -22,8 +37,8 @@ const loadHtmlPlugns = function (env) {
     template: "src/pages/" + page,
     inject,
     minify: false,
-    header: getFileStr("src/layout/header.html"),
-    footer: getFileStr("src/layout/footer.html"),
+    header: getFileStr("src/layout/header.html", page),
+    footer: getFileStr("src/layout/footer.html", page),
   }))
 };
 
@@ -39,17 +54,17 @@ module.exports = function (env, argv) {
     },
     devServer: {
       // 没生效
-      contentBase: [path.join(__dirname, "src/layout")],
+      // contentBase: [path.join(__dirname, "src/layout")],
       compress: true,
       hot: true,
     },
     module: {
       rules: [{
-        test: /\.css$/,
-        use: "css-loader"
-      },
-      {
-        test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+      //   test: /\.css$/,
+      //   use: "css-loader"
+      // },
+      // {
+        test: /\.(css|png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
           limit: 10000

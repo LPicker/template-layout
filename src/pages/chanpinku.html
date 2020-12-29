@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>植物提取- PlantChemMed</title>
-    <meta name="description" content="提供植物提取相关丰富的产品信息，享受植物提取产品自由搭配、规格随意等定制化服务。">
-    <meta name="keywords" content="植物提取">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="description" content="提供植物提取相关丰富的产品信息，享受植物提取产品自由搭配、规格随意等定制化服务。" />
+    <meta name="keywords" content="植物提取" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/lanmu.css" />
+    <link rel="stylesheet" href="../css/chanpinku.css" />
   </head>
   <body>
     <%= htmlWebpackPlugin.options.header %>
@@ -32,10 +36,10 @@
       <div class="table-container radius-8">
         <table>
           <colgroup>
-            <col width="15%">
-            <col width="20%">
-            <col width="15%">
-            <col width="50%">
+            <col width="15%" />
+            <col width="20%" />
+            <col width="15%" />
+            <col width="50%" />
           </colgroup>
           <tr>
             <th>目录号</th>
@@ -54,13 +58,24 @@
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
               <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
               </li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
               <li class="page-item"><a class="page-link" href="#">3</a></li>
+              <li class="page-item"><a class="page-link" href="#">4</a></li>
+              <li class="page-item active"><a class="page-link" href="#">5</a></li>
+              <li class="page-item"><a class="page-link" href="#">6</a></li>
+              <li class="page-item"><a class="page-link" href="#">7</a></li>
+              <li class="page-item"><a class="page-link" href="#">8</a></li>
+              <li class="page-item">……</li>
+              <li class="page-item"><a class="page-link" href="#">24</a></li>
               <li class="page-item">
-                <a class="page-link" href="#">Next</a>
+                <a class="page-link" href="#">下一页</a>
+              </li>
+              <li class="page-item">到 <input type="text" id="pageInput" /> 页</li>
+              <li class="page-item">
+                <button type="button" onclick="locationTo()">确定</button>
               </li>
             </ul>
           </nav>
@@ -68,11 +83,26 @@
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-      crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.min.js"
       integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function locationTo(){
+        var pageNum = document.getElementById("pageInput").value;
+        if(!/\d+/.test(pageNum)){
+          alert("请输入正确的页码！")
+          return;
+        }
+        var url = "";
+        window.location = url + "?page=" + pageNum;
+      }
+    </script>
   </body>
 </html>

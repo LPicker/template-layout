@@ -1,4 +1,6 @@
 import "./css/layout.css";
 import "./css/index.css";
-import "./css/lanmu.css";
+import "./css/chanpinku.css";
+// import "./layout/header.html";
+// import "./layout/footer.html";
 console.log('hello world')
