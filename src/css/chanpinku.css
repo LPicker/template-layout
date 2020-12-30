@@ -33,24 +33,6 @@
   flex: 1;
   margin-left: 12px;
 }
-
-.lanmu-container table {
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-  border: 1px solid #eee;
-}
-.lanmu-container th,
-.lanmu-container td {
-  border: 1px solid #eee;
-  border-width: 1px 0;
-  padding: 20px 16px;
-}
-.lanmu-container th {
-  background-color: var(--base-color);
-  color: var(--text-reverse-color);
-  text-align: left;
-}
 .pagination-container {
   margin: 50px auto;
 }

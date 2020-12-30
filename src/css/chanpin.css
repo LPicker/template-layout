@@ -1,0 +1,36 @@
+.chanpin-container .section-container {
+  position: relative;
+  margin-top: 64px;
+  border-top: 2px solid var(--base-color);
+}
+.chanpin-container p {
+  margin-bottom: 0;
+  text-indent: 2em;
+}
+
+.chanpin-container .section-heading {
+  position: absolute;
+  top: -31px;
+  left: 0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  width: 167px;
+  background-color: var(--base-color);
+  text-align: center;
+  color: var(--text-reverse-color);
+}
+.chanpin-container .section-heading h2 {
+  margin-bottom: 0;
+  line-height: 31px;
+  font-size: 14px;
+}
+.chanpin-container table {
+  width: 100%;
+}
+.chanpin-container table td {
+  border: 1px solid #dfeddc;
+  padding: 20px 24px;
+}
+.chanpin-container table tr:first-of-type > td {
+  border: none;
+}
