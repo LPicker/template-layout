@@ -48,6 +48,7 @@
 .pagination-container .page-item.active .page-link {
   background-color: var(--primary-color);
   border-color: var(--primary-color);
+  color: var(--text-reverse-color);
 }
 .pagination-container input[type="text"] {
   width: 34px;

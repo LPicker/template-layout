@@ -12,7 +12,7 @@ body {
   color: var(--base-font-color);
 }
 
-.flex-columns {
+.flex-row {
   display: flex;
   justify-content: space-between;
 }
@@ -34,6 +34,21 @@ a:hover {
 }
 .radius-8 {
   border-radius: 8px;
+}
+.icon-download{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../images/btn-icon1.jpg) center center no-repeat;
+}
+.icon-cash{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background: url(../images/btn-icon2.jpg) center center no-repeat;
+}
+.first-line-indent{
+  text-indent: 2em;
 }
 .main-container {
   width: 1450px;
@@ -59,7 +74,12 @@ a:hover {
 .table-container td {
   border: 1px solid #eee;
   border-width: 1px 0;
-  padding: 20px 16px;
+  padding: 10px 16px;
+}
+
+.table-container td {
+  padding: 6px 16px;
+  font-size: 12px;
 }
 .table-container th {
   background-color: var(--base-color);
