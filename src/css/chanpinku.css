@@ -1,6 +1,3 @@
-.lanmu-container {
-  /* padding: 20px 0; */
-}
 .lanmu-container .sidebar {
   background: none;
 }
@@ -11,12 +8,12 @@
   margin: 0;
   overflow: hidden;
   font-size: 18px;
-  color: var(--text-reverse-color);
+  color: #fff;
 }
 .lanmu-container .sidebar li {
-  width: 238px;
-  height: 40px;
-  line-height: 40px;
+  width: 285px;
+  height: 38px;
+  line-height: 38px;
   text-align: center;
   background-color: var(--base-color);
 }
@@ -25,13 +22,21 @@
 }
 .lanmu-container .sidebar .active {
   background-color: #f39801;
-  color: var(--text-reverse-color);
 }
 
 .lanmu-container .table-container {
   overflow: hidden;
   flex: 1;
   margin-left: 12px;
+}
+.lanmu-container .table-container th{
+  padding: 16px 16px;
+  color: #fff;
+}
+
+.lanmu-container .table-container td{
+  padding: 19px 16px;
+  font-size: 13px;
 }
 .pagination-container {
   margin: 50px auto;

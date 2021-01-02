@@ -75,8 +75,8 @@
 
 .hot-products-container .card-item {
   display: block;
-  margin: 8px auto;
-  width: calc(25% - 7px);
+  margin: 8px 0;
+  width: 350px;
   background-color: #fff;
 }
 
@@ -91,11 +91,21 @@
   padding: 8px 10px;
 }
 
+.hot-products-container .card-desc-container span {
+  font-family: var(--font-yh);
+  font-size: large;
+  color: #4d4d4d;
+}
 .hot-products-container .card-desc-container strong {
+  border-radius: 4px;
+  width: 102px;
   background-color: var(--base-color);
   color: var(--text-reverse-color);
+  line-height: 25px;
+  text-align: center;
 }
 .hot-products-container .card-desc-container p {
+  margin: 10px 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -104,14 +114,19 @@
 }
 
 /* 新闻资讯 */
+.news-container {
+  padding-bottom: 2rem;
+}
 .news-container .section-body {
   flex-wrap: initial;
   line-height: 1.8;
 }
 
 .news-container .left-box {
+  position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 50%;
 }
 
@@ -131,6 +146,15 @@
   display: -webkit-box;
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
+  margin: 0;
+}
+
+.news-container .left-box .detail-link {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: var(--font-yh);
+  color: #284974;
 }
 
 .news-container .right-box {

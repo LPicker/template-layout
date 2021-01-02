@@ -45,6 +45,7 @@
   padding-left: 30px;
   padding-right: 30px;
   height: 60px;
+  line-height: normal;
   color: #fff;
 }
 .summary-container .btns-wrapper button [class^="icon"] {
@@ -142,8 +143,8 @@ table .cell-slash span:last-child:before {
 }
 .chanpin-container .card-item {
   display: block;
-  margin: 8px auto;
-  width: calc(20% - 7px);
+  margin: 8px 0;
+  width: 350px;
   background-color: #fff;
 }
 
@@ -158,11 +159,21 @@ table .cell-slash span:last-child:before {
   padding: 8px 10px;
 }
 
+.chanpin-container .card-desc-container span {
+  font-family: var(--font-yh);
+  font-size: large;
+  color: #4d4d4d;
+}
 .chanpin-container .card-desc-container strong {
+  border-radius: 4px;
+  width: 102px;
   background-color: var(--base-color);
   color: var(--text-reverse-color);
+  line-height: 25px;
+  text-align: center;
 }
 .chanpin-container .card-desc-container p {
+  margin: 10px 0;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
