@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>植物提取- PlantChemMed</title>
-    <meta name="description" content="提供植物提取相关丰富的产品信息，享受植物提取产品自由搭配、规格随意等定制化服务。" />
-    <meta name="keywords" content="植物提取" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/chanpinku.css" />
+    <meta content="提供植物提取相关丰富的产品信息，享受植物提取产品自由搭配、规格随意等定制化服务。" name="description"/>
+    <meta content="植物提取" name="keywords"/>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
+    <link href="../css/layout.css" rel="stylesheet"/>
+    <link href="../css/chanpinku.css" rel="stylesheet"/>
   </head>
   <body>
     <%= htmlWebpackPlugin.options.header %>
     <div class="breadcrumbs main-container">
-      <span class="item">首页</span>
-      <span class="item">产品库</span>
-      <span class="item">植物提取</span>
+      <span class="item"><a href="" style="font-size: 14px">首页</a></span>
+      <span class="item"><a href="" style="font-size: 14px">产品库</a></span>
+      <span class="item"><a href="" style="font-size: 14px">植物提取</a></span>
     </div>
     <section class="main-container flex-row lanmu-container">
       <nav class="sidebar">
         <ul class="radius-8">
-          <li>全部</li>
-          <li class="active">植物提取</li>
-          <li>精细化学</li>
-          <li>蛋白质及多肽</li>
-          <li>荧光探针及染料</li>
-          <li>其他</li>
+          <li onclick="document.location='chanpinku.html'">全部</li>
+          <li class="active" onclick="document.location='chanpinku.html'">植物提取</li>
+          <li onclick="document.location='chanpinku.html'">精细化学</li>
+          <li onclick="document.location='chanpinku.html'">蛋白质及多肽</li>
+          <li onclick="document.location='chanpinku.html'">荧光探针及染料</li>
+          <li onclick="document.location='chanpinku.html'">其他</li>
         </ul>
       </nav>
       <div class="table-container radius-8 table-hover">
         <table>
           <colgroup>
-            <col width="15%" />
-            <col width="20%" />
-            <col width="15%" />
-            <col width="50%" />
+            <col width="15%"/>
+            <col width="20%"/>
+            <col width="15%"/>
+            <col width="50%"/>
           </colgroup>
           <tr>
             <th>目录号</th>
@@ -47,30 +43,30 @@
             <th>CAS</th>
             <th>描述</th>
           </tr>
-          <tr>
+          <tr onclick="document.location='chanpin.html'">
             <td>PC-09267</td>
             <td>PDPH</td>
             <td>83-92-67</td>
-            <td>Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
+            <td class="td-4">Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
           </tr>
-          <tr>
+          <tr onclick="document.location='chanpin.html'">
             <td>PC-09267</td>
             <td>PDPH</td>
             <td>83-92-67</td>
-            <td>Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
+            <td class="td-4">Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
           </tr>
-          <tr>
+          <tr onclick="document.location='chanpin.html'">
             <td>PC-09267</td>
             <td>PDPH</td>
             <td>83-92-67</td>
-            <td>Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
+            <td class="td-4">Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
           </tr>
         </table>
         <div class="pagination-container">
           <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">上一页</a>
+              <li class="page-item">
+                  <a aria-disabled="true" class="page-link" href="#" tabindex="-1">上一页</a>
               </li>
               <li class="page-item"><a class="page-link" href="#">1</a></li>
               <li class="page-item"><a class="page-link" href="#">2</a></li>
@@ -85,9 +81,9 @@
               <li class="page-item">
                 <a class="page-link" href="#">下一页</a>
               </li>
-              <li class="page-item">到 <input type="text" id="pageInput" /> 页</li>
+              <li class="page-item">到 <input id="pageInput" type="text"/> 页</li>
               <li class="page-item">
-                <button type="button" onclick="locationTo()">确定</button>
+                  <button onclick="locationTo()" type="button">确定</button>
               </li>
             </ul>
           </nav>

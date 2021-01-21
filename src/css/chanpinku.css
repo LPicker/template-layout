@@ -7,13 +7,13 @@
   padding: 0;
   margin: 0;
   overflow: hidden;
-  font-size: 18px;
-  color: #fff;
+  font-size: 16px;
+  color: #ffffff;
 }
 .lanmu-container .sidebar li {
-  width: 285px;
-  height: 38px;
-  line-height: 38px;
+  width: 227px;
+  height: 44px;
+  line-height: 44px;
   text-align: center;
   background-color: var(--base-color);
 }
@@ -27,43 +27,62 @@
 .lanmu-container .table-container {
   overflow: hidden;
   flex: 1;
-  margin-left: 12px;
+  margin-left: 28px;
+}
+.lanmu-container .table-container table {
+  border: 1px solid #e4f6e6;
 }
 .lanmu-container .table-container th{
-  padding: 16px 16px;
+  padding: 11px 16px;
   color: #fff;
 }
 
 .lanmu-container .table-container td{
-  padding: 19px 16px;
-  font-size: 13px;
+  padding: 6px 16px 5px;
+  font-size: 14px;
+}
+.lanmu-container .table-container .td-4{
+  padding: 6px 16px 5px;
+  font-size: 12px;
 }
 .pagination-container {
-  margin: 50px auto;
+  margin: 45px auto 90px;
+
 }
 .pagination-container .page-item + .page-item {
-  margin-left: 7px;
+  margin-left: 10px;
 }
 .pagination-container .page-item .page-link {
+  height: 28px;
   border-radius: 3px;
   margin-left: 0;
   padding: 0.2rem 0.57rem;
-  color: var(--light-font-color);
+  font-size: 10px;
+  color: #808080;
+  line-height: 1.5;
 }
 .pagination-container .page-item.active .page-link {
+  height: 28px;
   background-color: var(--primary-color);
   border-color: var(--primary-color);
-  color: var(--text-reverse-color);
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 1.5;
 }
 .pagination-container input[type="text"] {
-  width: 34px;
+  height: 28px;
+  width: 41px;
 }
 .pagination-container input[type="text"],
 .pagination-container button {
+  height: 28px;
   border-radius: 3px;
-  border: 1px solid #dee2e6;
+  border: 1px solid #d9e9e2;
   padding: 0.2rem 0.57rem;
   line-height: 1.25;
   background-color: #fff;
   color: #007bff;
+}
+.item a{
+  color: #808080;
 }

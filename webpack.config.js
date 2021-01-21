@@ -10,19 +10,17 @@ const getFileStr = (path, htmlName) => {
   let str = "";
   try {
     str = fs.readFileSync(path, "utf-8");
-    const $ = cheerio.load(str);
-    const oldNavHtml = cheerio.html($(".nav-container"));
+    const $ = cheerio.load(str, null, false);
     const anchors = $(".nav-container a");
     for (let i = 0; i < anchors.length; i++) {
       const a = anchors[i];
       if (a.attribs.href === htmlName) {
         a.parent.attribs.class = "active";
-        $(a.parent).html($(a).text());
+        a.attribs = {};
         break;
       }
     }
-    const newNavHtml = cheerio.html($(".nav-container"));
-    str = str.replace(oldNavHtml, newNavHtml);
+    str = $.html();
   } catch (err) {
     console.err(err)
   }
@@ -60,10 +58,10 @@ module.exports = function (env, argv) {
     },
     module: {
       rules: [{
-      //   test: /\.css$/,
-      //   use: "css-loader"
-      // },
-      // {
+        //   test: /\.css$/,
+        //   use: "css-loader"
+        // },
+        // {
         test: /\.(css|png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
