@@ -8,21 +8,93 @@
     <meta name="description" content="PlantChemMed，一个聚焦多种科研产品服务平台，提供抑制剂、阻断剂、小分子等行业相关丰富的产品信息，为全球科技事业和工业领域客户提供系统的产品资源及配套技术服务。">
     <meta name="keywords" content="科研产品，抑制剂、阻断剂、小分子、PlantChemMed">
     <link rel="stylesheet" href="../css/layout.css" />
+    <style>
+      .article-container {
+          padding: 0 0 28px;
+      }
+      .section-heading h2 {
+        margin-bottom: 18px;
+        font-weight: normal;
+        font-size: 40px;
+        color: #333;
+      }
+      .section-heading::after {
+        content: "";
+        display: block;
+        height: 30px;
+        background-image: url(../images/heading.png);
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+      .section-body {
+        flex-wrap: wrap;
+        padding-top: 18px;
+      }
+      .article-card {
+        margin: 10px 0;
+        padding: 24px;
+        box-sizing: border-box;
+        width: 532px;
+        height: 302px;
+      }
+      .article-card img {
+        margin: 10px auto 2px;
+        display: block;
+      }
+      .article-card h4 {
+        text-align: center;
+        font-size: 16px;
+        color: #1a1a1a;
+      }
+      .article-card p {
+        font-size: 12px;
+        color: #4c4c4c;
+        line-height: 25px;
+        letter-spacing: 0.6px;
+      }
+    </style>
   </head>
 
   <body>
     <%= htmlWebpackPlugin.options.header %>
-    <section >
+    <div class="breadcrumbs main-container">
+      <span class="item"><a href="">首页</a></span>
+      <span class="item"><a href="">产品库</a></span>
+      <span class="item"><a href="">关于发货</a></span>
+    </div>
+    <section class="main-container article-container b-box">
       <div class="section-heading t-c">
         <h2>关于发货</h2>
       </div>
-      <div class="section-body main-container">
-        <p class="p-text">
-            除非另有约定，所有订单都是基于FCA卖方货交承运人（指定地点）。如果运费与装卸手续费已出报价或发票，它们应该包括实际运费之外的费用。将货物在卖方装运点递交给承运人即完成了向买方的交货过程，而且买方将承担运输过程中所有的损失或损坏。每种产品的发货方法在卖方的商品目录中已经标出。但是，卖方保留根据具体情况决定最终发货方式的权利。卖方保留分期发货的权利，对所有分期发货的货物卖方单独出具发票，买方在发票到期时付款，不涉及到其后交货的货物。任何一期货物的延迟交货不会免去买方接受剩余货物的责任。
-        </p>
-        <p class="p-text">
-        如卖方因不可抗拒力原因无法供货，卖方将及时通知买方，双方将视情况决定部分不履行、全部不履行或延期履行；如供货期限届满日为国内外重大节日或国家法定假日，则供货期限顺延；若因缺货导致延期交货或无法供货，卖方将及时告知买方，并不视为卖方违约。不可抗力：因火灾、洪水、风暴、爆炸、恐怖事件、战争、政府行为或任何其他卖方无法预见、无法避免和无法克服的事件造成延期交货或无法交货的，卖方不承担任何责任。
-        </p>
+      <div class="section-body flex-row">
+        <div class="article-card">
+          <img src="../images/about-delivery-1.png">
+          <h4>运输说明与发票</h4>
+          <p class="p-text">
+            除非另有约定，所有订单都是基于FCA卖方货交承运人（指定地点）。如果运费与装卸手续费已出报价或发票，它们应该包括实际运费之外的费用。将货物在卖方装运点递交给承运人即完成了向买方的交货过程，而且买方将承担运输过程中所有的损失或损坏。每种产品的发货方法在卖方的商品目录中已经标出。
+          </p>
+        </div>
+        <div class="article-card">
+          <img src="../images/about-delivery-2.png">
+          <h4>分期发货与交货</h4>
+          <p class="p-text">
+            卖方保留分期发货的权利，对所有分期发货的货物卖方单独出具发票，买方在发票到期时付款，不涉及到其后交货的货物。任何一期货物的延迟交货不会免去买方接受剩余货物的责任。
+          </p>
+        </div>
+        <div class="article-card">
+          <img src="../images/about-delivery-3.png">
+          <h4>不可抗力原因无法供货</h4>
+          <p class="p-text">
+            如卖方因不可抗拒力原因无法供货，卖方将及时通知买方，双方将视情况决定部分不履行、全部不履行或延期履行；不可抗力：因火灾、洪水、风暴、爆炸、恐怖事件、战争、政府行为或任何其他卖方无法预见、无法避免和无法克服的事件造成延期交货或无法交货的，卖方不承担任何责任。
+          </p>
+        </div>
+        <div class="article-card">
+          <img src="../images/about-delivery-4.png">
+          <h4>缺货或节日延期交货或无法供货</h4>
+          <p class="p-text">
+            如供货期限届满日为国内外重大节日或国家法定假日，则供货期限顺延；若因缺货导致延期交货或无法供货，卖方将及时告知买方，并不视为卖方违约。
+          </p>
+        </div>
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>

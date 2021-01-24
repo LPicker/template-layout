@@ -57,24 +57,6 @@
   margin-top: 10px;
 }
 
-.summary-container .btns-wrapper button {
-  display: inline-flex;
-  align-items: center;
-  margin: 0 4px;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 60px;
-  color: #fff;
-}
-.summary-container .btns-wrapper button [class^="icon"] {
-  margin-right: 5px;
-}
-.summary-container .btns-wrapper .btn-warning {
-  background-color: #f39801;
-}
-.summary-container .btns-wrapper .btn-success {
-  background-color: #338e63;
-}
 .cp-table-container{
   height: 198px;
 }

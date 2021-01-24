@@ -51,8 +51,26 @@ module.exports = function (env, argv) {
       publicPath: "/",  // 默认值
     },
     devServer: {
+      before(app, server, compiler) {
+        const watchFiles = ['.html', '.pug'];
+
+        compiler.hooks.done.tap('done', () => {
+          const changedFiles = Object.keys(compiler.watchFileSystem.watcher.mtimes);
+
+          if (
+            this.hot &&
+            changedFiles.some(filePath => watchFiles.includes(path.parse(filePath).ext))
+          ) {
+            server.sockWrite(server.sockets, 'content-changed');
+          }
+        });
+      },
       // 没生效
-      // contentBase: [path.join(__dirname, "src/layout")],
+      // contentBase: [
+      //   path.resolve(__dirname, "src/layout"),
+      //   path.resolve(__dirname, "src/pages")
+      // ],
+      openPage: 'pages/shouye.html',
       compress: true,
       hot: true,
     },

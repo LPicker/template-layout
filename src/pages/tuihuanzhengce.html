@@ -7,16 +7,31 @@
     <title>抑制剂_阻断剂_小分子_科研产品- PlantChemMed</title>
     <meta name="description" content="PlantChemMed，一个聚焦多种科研产品服务平台，提供抑制剂、阻断剂、小分子等行业相关丰富的产品信息，为全球科技事业和工业领域客户提供系统的产品资源及配套技术服务。">
     <meta name="keywords" content="科研产品，抑制剂、阻断剂、小分子、PlantChemMed">
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet" />
     <link rel="stylesheet" href="../css/layout.css" />
+    <style>
+      .article-container .btns-wrapper {
+        margin-top: 70px;
+      }
+      .article-container .btns-wrapper button {
+        padding: .5rem 48px;
+      }
+    </style>
   </head>
 
   <body>
     <%= htmlWebpackPlugin.options.header %>
-    <section >
+    <div class="breadcrumbs main-container">
+      <span class="item"><a href="">首页</a></span>
+      <span class="item"><a href="">产品库</a></span>
+      <span class="item"><a href="">退货说明</a></span>
+    </div>
+    <section class="main-container article-container b-box">
       <div class="section-heading t-c">
         <h2>退货说明</h2>
       </div>
-      <div class="section-body main-container">
+      <div class="section-body">
         <p class="p-text">
           已签订的订单，只有在获得买卖双方就具体变更及因此对价格与交货期产生的影响达成书面意见并签字后方可变更或修订。
           买方不得取消订单，除非获得卖方明确的书面同意。在这种情况下，卖方将告知买方取消订单需承担的所有费用，而买方同意支付所有这些费用。
@@ -33,6 +48,12 @@
         故意破坏，暴动，战争，罢工或其他因劳动力造成的困难，闪电、水灾、风暴或其他天灾，交通延误或无法以目前的价格获得必要的劳动力、
         燃料、材料、用品或电力供给。</br>
     </p>
+      </div>
+      <div class="btns-wrapper t-c">
+        <button class="btn btn-warning btn-lg">
+          <i class="icon-download"></i>
+          下载售后表
+        </button>
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>

@@ -21,10 +21,6 @@
   background-position: center;
 }
 
-.section-container:nth-of-type(odd) .section-heading::after {
-  background-image: url(../images/heading.png);
-}
-
 .section-body {
   display: flex;
   justify-content: space-between;

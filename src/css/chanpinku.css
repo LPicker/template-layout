@@ -1,3 +1,7 @@
+.lanmu-container {
+  margin-bottom: 60px;
+}
+
 .lanmu-container .sidebar {
   background: none;
 }
@@ -15,6 +19,7 @@
   height: 44px;
   line-height: 44px;
   text-align: center;
+  cursor: pointer;
   background-color: var(--base-color);
 }
 .lanmu-container .sidebar li + li {
@@ -24,6 +29,57 @@
   background-color: #f39801;
 }
 
+.lanmu-container .empty-container {
+  height: 295px;
+}
+
+.empty-page .empty-container .empty-text {
+  /* margin-top和margin-bottom没有任何视觉效果。其原因就在于行内非替换元素的外边距不会改变一个元素的行高。 */
+  /* https://segmentfault.com/q/1010000000694623 */
+  margin-top: 82px;
+  /* 所以设置为 inline-block */
+  display: inline-block;
+  padding-left: 32px;
+  font-size: 20px;
+  color: #808080;
+  background-image: url(../images/empty-icon.png);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+.empty-page .section-container {
+  position: relative;
+  margin-top: 40px;
+  margin-left: 28px;
+  border-top: 2px solid var(--base-color);
+}
+.empty-page .section-heading {
+  position: absolute;
+  top: -42px;
+  left: 0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  width: 195px;
+  background-color: var(--base-color);
+  text-align: center;
+  color: var(--text-reverse-color);
+}
+.empty-page .section-heading h2 {
+  margin: 0;
+  line-height: 40px;
+  font-size: 16px;
+  height: 40px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.lanmu-container .empty-page .table-container {
+  margin-left: 0;
+  margin-top: 10px;
+}
+.lanmu-container .empty-page .table-container th{
+  background-color: transparent;
+  color: var(--base-color);
+}
 .lanmu-container .table-container {
   overflow: hidden;
   flex: 1;
@@ -40,13 +96,14 @@
 .lanmu-container .table-container td{
   padding: 6px 16px 5px;
   font-size: 14px;
+  cursor: pointer;
 }
 .lanmu-container .table-container .td-4{
   padding: 6px 16px 5px;
   font-size: 12px;
 }
 .pagination-container {
-  margin: 45px auto 90px;
+  margin: 45px auto 30px;
 
 }
 .pagination-container .page-item + .page-item {
