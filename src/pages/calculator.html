@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>抑制剂_阻断剂_小分子_科研产品- PlantChemMed</title>
+  <meta name="description"
+    content="PlantChemMed，一个聚焦多种科研产品服务平台，提供抑制剂、阻断剂、小分子等行业相关丰富的产品信息，为全球科技事业和工业领域客户提供系统的产品资源及配套技术服务。">
+  <meta name="keywords" content="科研产品，抑制剂、阻断剂、小分子、PlantChemMed">
+  <link rel="stylesheet" href="../css/layout.css" />
+  <style>
+    .card-section-container {
+      margin-bottom: 86px;
+    }
+
+    .card-section-body {
+      border: 1px solid #d9e9e2;
+      border-top: none;
+    }
+
+    .formula-wrapper {
+      padding: 40px 0 30px 0;
+      font-size: 14px;
+    }
+
+    .formula-form {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+
+    fieldset {
+      border: none;
+    }
+
+    fieldset legend {
+      font-weight: bold;
+      font-size: 14px;
+    }
+    fieldset input,
+    fieldset select {
+      border: 1px solid #d9e9e2;
+      outline: none;
+    }
+
+    fieldset input {
+      width: 88px;
+      height: 22px;
+      padding: 4px 11px;
+    }
+    
+    fieldset select {
+      width: 65px;  
+      height: 32px;
+      padding: 4px 8px 4px 8px;
+    }
+
+    .formula-form .operator {
+      margin-bottom: 10px;
+      height: 32px;
+      line-height: 32px;
+      box-sizing: border-box;
+    }
+
+    .btns-wrapper {
+      margin: 30px 0 45px 0;
+    }
+    .btns-wrapper .btn,
+    .btns-wrapper .btn:hover,
+    .btns-wrapper .btn:active {
+      padding: .5rem 15px;
+      height: 30px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <%= htmlWebpackPlugin.options.header %>
+    <div class="breadcrumbs main-container">
+      <span class="item"><a href="">首页</a></span>
+      <span class="item"><a href="">产品库</a></span>
+      <span class="item"><a href="">摩尔计算器&稀释计算器</a></span>
+    </div>
+    <section class="main-container of-hidden">
+      <section class="card-section-container">
+        <div class="card-section-heading t-c">
+          <h2>摩尔计算器</h2>
+        </div>
+        <div class="card-section-body">
+          <div class="formula-wrapper t-c">
+            Mass(g) = Concentration(mol/L)×Volume(L)×Molecular Weight(g/mol)
+          </div>
+          <div class="formula-form">
+            <fieldset>
+              <legend>Mass</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mg</option>
+              </select>
+            </fieldset>
+            <span class="operator">=</span>
+            <fieldset>
+              <legend>Concentration</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mM</option>
+              </select>
+            </fieldset>
+            <span class="operator">×</span>
+            <fieldset>
+              <legend>Volume</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mL</option>
+              </select>
+            </fieldset>
+            <span class="operator">×</span>
+            <fieldset>
+              <legend>Molecular Weight</legend>
+              <input type="text">
+            </fieldset>
+          </div>
+          <div class="btns-wrapper t-c">
+            <button class="btn btn-warning btn-lg">
+              计算
+            </button>
+            <button class="btn btn-success btn-lg">
+              重置
+            </button>
+          </div>
+        </div>
+      </section>
+      <section class="card-section-container">
+        <div class="card-section-heading t-c">
+          <h2>稀释计算器</h2>
+        </div>
+        <div class="card-section-body">
+          <div class="formula-wrapper t-c">
+            <p>Concentration(C1)×Volume(V1)=Concentration(C2)×Volume(V2)</p>
+            <p>This equation is commonly abbreviated as: C1*V1 = C2*V2</p>
+          </div>
+          <div class="formula-form">
+            <fieldset>
+              <legend>Concentration(C1)</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mM</option>
+              </select>
+            </fieldset>
+            <span class="operator">×</span>
+            <fieldset>
+              <legend>Volume(V1)</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mL</option>
+              </select>
+            </fieldset>
+            <span class="operator">=</span>
+            <fieldset>
+              <legend>Concentration(C2)</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mM</option>
+              </select>
+            </fieldset>
+            <span class="operator">×</span>
+            <fieldset>
+              <legend>Volume(V2)</legend>
+              <input type="text">
+              <select name="">
+                <option value="">mL</option>
+              </select>
+            </fieldset>
+          </div>
+          <div class="btns-wrapper t-c">
+            <button class="btn btn-warning btn-lg">
+              计算
+            </button>
+            <button class="btn btn-success btn-lg">
+              重置
+            </button>
+          </div>
+        </div>
+      </section>
+    </section>
+    <%= htmlWebpackPlugin.options.footer %>
+</body>
+
+</html>

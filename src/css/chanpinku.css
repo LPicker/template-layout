@@ -46,30 +46,10 @@
   background-position: 0 center;
   background-repeat: no-repeat;
 }
-.empty-page .section-container {
+.empty-page .card-section-container {
   position: relative;
   margin-top: 40px;
   margin-left: 28px;
-  border-top: 2px solid var(--base-color);
-}
-.empty-page .section-heading {
-  position: absolute;
-  top: -42px;
-  left: 0;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-  width: 195px;
-  background-color: var(--base-color);
-  text-align: center;
-  color: var(--text-reverse-color);
-}
-.empty-page .section-heading h2 {
-  margin: 0;
-  line-height: 40px;
-  font-size: 16px;
-  height: 40px;
-  color: #ffffff;
-  text-align: center;
 }
 
 .lanmu-container .empty-page .table-container {

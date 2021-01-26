@@ -60,6 +60,9 @@ a:hover {
   height: 243px;
   border-radius: 8px;
 }
+.of-hidden {
+  overflow: hidden;
+}
 .icon-download {
   display: inline-block;
   width: 30px;
@@ -103,6 +106,7 @@ a:hover {
   font-family: var(--font-yh);
   line-height: 1.5;
   color: #fff !important;
+  outline: none;
 }
 .btns-wrapper button [class^="icon"] {
   margin-right: 5px;
@@ -112,6 +116,12 @@ a:hover {
 }
 .btns-wrapper .btn-success {
   background-color: #338e63;
+}
+.btns-wrapper .btn-warning:focus {
+  box-shadow: 0 0 0 0.2rem rgba(222,170,12,.5);
+}
+.btns-wrapper .btn-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(72,180,97,.5);
 }
 .table-container {
   overflow: hidden;
@@ -369,4 +379,29 @@ span {
 .article-container p {
   margin: 0;
   line-height: 36px;
+}
+
+.card-section-container {
+  position: relative;
+  margin-top: 40px;
+  border-top: 2px solid var(--base-color);
+}
+.card-section-heading {
+  position: absolute;
+  top: -42px;
+  left: 0;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+  width: 195px;
+  background-color: var(--base-color);
+  text-align: center;
+  color: var(--text-reverse-color);
+}
+.card-section-heading h2 {
+  margin: 0;
+  line-height: 40px;
+  font-size: 16px;
+  height: 40px;
+  color: #ffffff;
+  text-align: center;
 }
