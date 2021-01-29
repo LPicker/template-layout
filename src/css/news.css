@@ -1,26 +1,3 @@
-/* banner */
-.banner-container img {
-  display: block;
-  width: 100%;
-}
-
-.section-container {
-  padding-top: 45px;
-}
-
-.section-container:nth-of-type(odd) {
-  background-color: #dfeddc;
-}
-
-.section-heading::after {
-  content: "";
-  display: block;
-  height: 30px;
-  background-image: url(../images/heading.png);
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 .section-body {
   display: flex;
   justify-content: space-between;
@@ -33,7 +10,7 @@
   width: calc(50% - 36px);
   justify-content: space-between;
 }
-.section-body .card-item img{
+.section-body .card-item img {
   width: 230px;
   height: 230px;
   margin-bottom: 45px;
@@ -65,67 +42,103 @@
   justify-content: space-between;
   margin-left: 0;
   line-height: 17px;
-  font-family:Arial;
+  font-family: Arial;
   font-size: 14px;
   color: #4c4c4c;
-}
-
-/* 热销产品 */
-.hot-products-container .section-body {
-  padding-bottom: 45px;
-}
-
-.hot-products-container .card-item {
-  display: block;
-  margin: 8px 0;
-  width: 269px;
-  background-color: #fff;
-}
-
-.hot-products-container .card-item img {
-  display: block;
-  border-radius: 1px;
-  width: 100%;
-  height: 182px;
-  margin-bottom: 0;
-  outline: 2px solid var(--base-color);
-}
-
-.hot-products-container .card-desc-container {
-  padding: 8px 10px;
-}
-
-.hot-products-container .card-desc-container span {
-  font-family: var(--font-yh);
-  font-size: 14px;
-  font-weight: bold;
-  color: #4c4c4c;
-}
-.hot-products-container .card-desc-container strong {
-  width: 102px;
-  background-color: var(--base-color);
-  color: #ffffff;
-  line-height: 25px;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-}
-.hot-products-container .card-desc-container p {
-  margin: 10px 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  font-weight: bold;
-  font-size: 12px;
-  color: #4c4c4c;
-  -webkit-box-orient: vertical;
 }
 
 /* 新闻资讯 */
 .news-container {
   padding-bottom: 2rem;
 }
+
+.news-container .main-content {
+  width: 745px;
+  --border-color: #d9e9e2;
+}
+.news-container .graphic-list {
+  margin: 0;
+  padding: 0;
+}
+.news-container .graphic-list-item {
+  display: flex;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+.news-container .graphic-list-item:first-of-type {
+  border-top: 1px solid var(--border-color);
+}
+.news-container .graphic-list .news-list-item {
+  margin-left: 28px;
+}
+.news-container .news-list-item a {
+  display: block;
+  cursor: pointer;
+}
+.news-container .news-list-item h6 {
+  font-weight: bold;
+  color: #333;
+}
+.news-container .news-list-item p {
+  text-indent: 2em;
+  font-size: 12px;
+  line-height: 28px;
+  color: #4c4c4c;
+}
+.news-container .news-list-item a:hover h6,
+.news-container .news-list-item a:hover p {
+  color: var(--base-color);
+}
+.news-container .news-list-item .news-atts {
+  font-size: 12px;
+  color: #808080;
+}
+
+.news-container .news-list .news-list-item {
+  padding: 12px 0;
+  border-top: 1px solid var(--border-color);
+}
+.news-container .news-list .news-list-item:first-of-type {
+  border-top: none;
+}
+
+.news-container .aside-container {
+  flex: 1;
+  margin-left: 36px;
+  padding-bottom: 2rem;
+}
+.news-container .aside-container dl {
+  border-color: var(--light-color);
+  border-style: solid;
+  border-width: 0 1px 1px;
+}
+.news-container .aside-container dt {
+  margin-bottom: 4px;
+  padding-left: 12px;
+  height: 45px;
+  line-height: 45px;
+  color: var(--base-color);
+  background-color: var(--light-color);
+}
+.news-container .aside-container dd {
+  position: relative;
+  margin: 0;
+  padding: 8px 0 8px 28px;
+  font-size: 12px;
+  color: var(--light-font-color);
+}
+.news-container .aside-container dd::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  top: calc(50% - 2px);
+  display: inline-block;
+  border-radius: 50%;
+  width: 4px;
+  height: 4px;
+  background-color: var(--primary-color);
+}
+
 .news-container .section-body {
   flex-wrap: initial;
   line-height: 1.8;
@@ -144,7 +157,7 @@
 }
 
 .news-container .left-box .heading {
-    margin-top: 28px;
+  margin-top: 28px;
   margin-bottom: 10px;
 }
 
@@ -240,7 +253,7 @@
   background-color: #ffffff;
 }
 
-.corporate-logo-container .logo-item img{
+.corporate-logo-container .logo-item img {
   width: 220px;
   height: 80px;
 }
@@ -254,7 +267,6 @@
   margin-right: 36px;
   padding: 20px 0;
   font-size: 18px;
-
 }
 
 .links-container .link-item a {

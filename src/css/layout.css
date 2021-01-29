@@ -1,5 +1,6 @@
 :root {
   --base-color: #338e63;
+  --light-color: #effaf4;
   --primary-color: #f39801;
   --text-reverse-color: #fefefe;
 
@@ -38,7 +39,7 @@ a:hover {
 .t-cp {
   height: 280px;
   width: 890px;
-  background-color: #effaf4;
+  background-color: var(--light-color);
 }
 .t-r {
   text-align: right;
@@ -62,6 +63,9 @@ a:hover {
 }
 .of-hidden {
   overflow: hidden;
+}
+.no-list-style {
+  list-style: none;
 }
 .icon-download {
   display: inline-block;
@@ -355,7 +359,7 @@ footer ul li {
   text-indent: 2em;
 }
 span {
-  color: #4c4c4c;
+  /* color: #4c4c4c; */
 }
 .s-400 {
   color: #f39800;

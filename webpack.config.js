@@ -76,10 +76,6 @@ module.exports = function (env, argv) {
     },
     module: {
       rules: [{
-        //   test: /\.css$/,
-        //   use: "css-loader"
-        // },
-        // {
         test: /\.(css|png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
         loader: 'url-loader',
         options: {
