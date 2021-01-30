@@ -6,23 +6,29 @@ const TransferWebpackPlugin = require("transfer-webpack-plugin");
 const htmlWebpackPlugin = require("html-webpack-plugin");
 const HtmlBeautifyPlugin = require("@nurminen/html-beautify-webpack-plugin");
 
-const getFileStr = (path, htmlName) => {
+const handleHeader = (htmlStr, pageName) => {
+  const $ = cheerio.load(htmlStr, null, false);
+  const anchors = $(".nav-container a");
+  for (let i = 0; i < anchors.length; i++) {
+    const a = anchors[i];
+    if (a.attribs.href === pageName) {
+      a.parent.attribs.class = "active";
+      a.attribs = {};
+      break;
+    }
+  }
+  return $.html();
+}
+
+const getFileStr = (fragmentPath, pageName) => {
   let str = "";
   try {
-    str = fs.readFileSync(path, "utf-8");
-    const $ = cheerio.load(str, null, false);
-    const anchors = $(".nav-container a");
-    for (let i = 0; i < anchors.length; i++) {
-      const a = anchors[i];
-      if (a.attribs.href === htmlName) {
-        a.parent.attribs.class = "active";
-        a.attribs = {};
-        break;
-      }
+    str = fs.readFileSync(fragmentPath, "utf-8");
+    if (path.basename(fragmentPath) === "header.html") {
+      str = handleHeader(str, pageName);
     }
-    str = $.html();
   } catch (err) {
-    console.err(err)
+    console.error(err);
   }
   return str;
 };
@@ -30,14 +36,33 @@ const getFileStr = (path, htmlName) => {
 const pages = fs.readdirSync(path.resolve(__dirname, "src/pages"));
 const loadHtmlPlugns = function (env) {
   const inject = env !== "production";
-  return pages.map((page) => new htmlWebpackPlugin({
-    filename: "pages/" + page,
-    template: "src/pages/" + page,
-    inject,
-    minify: false,
-    header: getFileStr("src/layout/header.html", page),
-    footer: getFileStr("src/layout/footer.html", page),
-  }))
+  const footer = getFileStr("src/layout/footer.html");
+  const aside = getFileStr("src/components/news-aside.html");
+  const pagination = getFileStr("src/components/pagination.html");
+  const pageArr = pages.map(page => {
+    const option = {
+      filename: "pages/" + page,
+      template: "src/pages/" + page,
+      minify: false,
+      inject,
+      header: getFileStr("src/layout/header.html", page),
+      footer
+    };
+    switch (page) {
+      case "news.html":
+        option.aside = aside;
+        option.pagination = pagination;
+        break;
+      case "newsdetails.html":
+        option.aside = aside;
+        break;
+      case "chanpinku.html":
+        option.pagination = pagination;
+        break;
+    }
+    return new htmlWebpackPlugin(option);
+  });
+  return pageArr;
 };
 
 module.exports = function (env, argv) {

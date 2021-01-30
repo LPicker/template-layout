@@ -62,32 +62,7 @@
             <td class="td-4">Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物 Rotenone是线粒体电子传递链复合物</td>
           </tr>
         </table>
-        <div class="pagination-container">
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center">
-              <li class="page-item">
-                  <a aria-disabled="true" class="page-link" href="#" tabindex="-1">上一页</a>
-              </li>
-              <li class="page-item"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item active"><a class="page-link" href="#">5</a></li>
-              <li class="page-item"><a class="page-link" href="#">6</a></li>
-              <li class="page-item"><a class="page-link" href="#">7</a></li>
-              <li class="page-item"><a class="page-link" href="#">8</a></li>
-              <li class="page-item">……</li>
-              <li class="page-item"><a class="page-link" href="#">24</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">下一页</a>
-              </li>
-              <li class="page-item">到 <input id="pageInput" type="text"/> 页</li>
-              <li class="page-item">
-                  <button onclick="locationTo()" type="button">确定</button>
-              </li>
-            </ul>
-          </nav>
-        </div>
+        <%= htmlWebpackPlugin.options.pagination %>
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>

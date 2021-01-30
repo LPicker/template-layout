@@ -103,8 +103,8 @@ a:hover {
   align-items: center;
   margin: 0 4px;
   border: none;
-  border-radius: .3rem;
-  padding: .5rem 30px;
+  border-radius: 0.3rem;
+  padding: 0.5rem 30px;
   height: 54px;
   font-size: 1.25rem;
   font-family: var(--font-yh);
@@ -122,10 +122,10 @@ a:hover {
   background-color: #338e63;
 }
 .btns-wrapper .btn-warning:focus {
-  box-shadow: 0 0 0 0.2rem rgba(222,170,12,.5);
+  box-shadow: 0 0 0 0.2rem rgba(222, 170, 12, 0.5);
 }
 .btns-wrapper .btn-success:focus {
-  box-shadow: 0 0 0 0.2rem rgba(72,180,97,.5);
+  box-shadow: 0 0 0 0.2rem rgba(72, 180, 97, 0.5);
 }
 .table-container {
   overflow: hidden;
@@ -408,4 +408,49 @@ span {
   height: 40px;
   color: #ffffff;
   text-align: center;
+}
+
+.pagination-container {
+  margin: 45px auto 30px;
+}
+.pagination-container .page-item + .page-item {
+  margin-left: 10px;
+}
+.pagination-container .page-item .page-link {
+  height: 28px;
+  border-radius: 3px;
+  margin-left: 0;
+  padding: 0.2rem 0.57rem;
+  font-size: 10px;
+  color: #808080;
+  line-height: 1.5;
+}
+.pagination-container .page-item.active .page-link {
+  height: 28px;
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 1.5;
+}
+.pagination-container input[type="text"] {
+  height: 28px;
+  width: 41px;
+}
+.pagination-container input[type="text"],
+.pagination-container button {
+  height: 28px;
+  border-radius: 3px;
+  border: 1px solid #d9e9e2;
+  padding: 0.2rem 0.57rem;
+  line-height: 1.25;
+  background-color: #fff;
+  color: #007bff;
+}
+
+.pagination-container button {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: #fff;
+  outline: none;
 }
