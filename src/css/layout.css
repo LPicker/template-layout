@@ -67,6 +67,12 @@ a:hover {
 .no-list-style {
   list-style: none;
 }
+.text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
 .icon-download {
   display: inline-block;
   width: 30px;

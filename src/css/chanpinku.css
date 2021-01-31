@@ -83,6 +83,9 @@
   font-size: 12px;
 }
 
+.lanmu-container .table-container .td-4 .text-ellipsis {
+  -webkit-line-clamp: 3;
+}
 .item a{
   color: #808080;
 }
