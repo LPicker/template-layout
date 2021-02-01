@@ -35,14 +35,23 @@
       border-top: 1px solid var(--border-color);
     }
   </style>
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a8d1d9a1bc5523eb6c7bb4b7f358110a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 
 <body>
   <%= htmlWebpackPlugin.options.header %>
   <div class="breadcrumbs main-container">
-    <span class="item"><a href="">首页</a></span>
-    <span class="item"><a href="">产品库</a></span>
-    <span class="item"><a href="">新闻资讯</a></span>
+    <span class="item"><a href="shouye.html">首页</a></span>
+    <span class="item"><a href="xinwenzixun.html">新闻资讯</a></span>
+    <span class="item"><a href="">新闻详情</a></span>
   </div>
   <section class="main-container news-container article-container flex-row">
     <div class="main-content">

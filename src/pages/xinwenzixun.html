@@ -12,14 +12,22 @@
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
   <link rel="stylesheet" href="../css/layout.css" />
   <link rel="stylesheet" href="../css/news.css" />
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?a8d1d9a1bc5523eb6c7bb4b7f358110a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
 </head>
 
 <body>
   <%= htmlWebpackPlugin.options.header %>
   <div class="breadcrumbs main-container">
-    <span class="item"><a href="">首页</a></span>
-    <span class="item"><a href="">产品库</a></span>
-    <span class="item"><a href="">新闻资讯</a></span>
+    <span class="item"><a href="shouye.html">首页</a></span>
+    <span class="item"><a href="#">新闻资讯</a></span>
   </div>
   <section class="main-container news-container flex-row">
     <div class="main-content">
@@ -27,7 +35,7 @@
         <li class="graphic-list-item">
           <img src="../images/news.jpg" alt="">
           <section class="news-list-item">
-            <a href="newsdetails.html">
+            <a href="xinwenxiangqing.html">
               <h6>关于“扫黑除恶”专项斗争信息普查工作的通知</h6>
               <p>
                 《通知》明确了这次扫黑除恶专项斗争的总体要求，目标任务。《通知》指出，要全面贯彻党的十九大精神，以习近平新时代中国特色社会主义思想为指导。

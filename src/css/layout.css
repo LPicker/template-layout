@@ -14,8 +14,22 @@ body {
   margin: 0;
   font-family: var(--font-yh);
   color: var(--base-font-color);
+  line-height: 1.5;
 }
-
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
 .flex-row {
   display: flex;
   justify-content: space-between;
@@ -198,7 +212,7 @@ header {
   padding: 0 12px;
   height: var(--height);
   background: var(--base-color);
-  font-size: 23px;
+  font-size: 28px;
   color: var(--text-reverse-color);
 }
 
@@ -215,6 +229,7 @@ header {
 }
 
 .nav-container ul > li {
+  display: flex;
   width: 250px;
   height: 76px;
   line-height: 76px;
@@ -231,6 +246,7 @@ header {
 }
 
 .nav-container ul > li > a {
+  flex: 1;
   font-size: 22px;
   color: var(--text-reverse-color);
 }

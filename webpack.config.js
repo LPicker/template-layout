@@ -49,11 +49,11 @@ const loadHtmlPlugns = function (env) {
       footer
     };
     switch (page) {
-      case "news.html":
+      case "xinwenzixun.html":
         option.aside = aside;
         option.pagination = pagination;
         break;
-      case "newsdetails.html":
+      case "xinwenxiangqing.html":
         option.aside = aside;
         break;
       case "chanpinku.html":
