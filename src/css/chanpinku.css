@@ -72,9 +72,12 @@
   padding: 11px 16px;
   color: #fff;
 }
-
+.lanmu-container .table-container tr{
+  height: 66px;
+}
 .lanmu-container .table-container td{
   padding: 6px 16px 5px;
+  height: 66px;
   font-size: 14px;
   cursor: pointer;
 }
@@ -84,7 +87,7 @@
 }
 
 .lanmu-container .table-container .td-4 .text-ellipsis {
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 2;
 }
 .item a{
   color: #808080;

@@ -8,25 +8,90 @@
     <meta name="description" content="PlantChemMed，一个聚焦多种科研产品服务平台，提供抑制剂、阻断剂、小分子等行业相关丰富的产品信息，为全球科技事业和工业领域客户提供系统的产品资源及配套技术服务。">
     <meta name="keywords" content="科研产品，抑制剂、阻断剂、小分子、PlantChemMed">
     <link rel="stylesheet" href="../css/layout.css" />
+    <style>
+      .main-container h2,
+      .main-container h3,
+      .main-container h4 {
+        font-weight: normal;
+      }
+      .main-container h2 {
+        margin: 0 0 12px;
+        font-size: 20px;
+        color: #333;
+      }
+      .main-container h3 {
+        margin: 0;
+        font-size: 16px;
+        color: #808080;
+      }
+      .lianxi-container {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 45px;
+      }
+      .lianxi-container .item {
+        text-align: center;
+      }
+      .lianxi-container .item h4 {
+        margin: 24px 0;
+        font-size: 20px;
+      }
+      .lianxi-container .item img {
+        border-radius: 50%;
+        border: 1px solid var(--base-color);
+        padding: 24px;
+      }
+      .lianxi-container .attr-name,
+      .lianxi-container .attr-val,
+      .lianxi-container .attr-name-val {
+        display: block;
+        font-size: 14px;
+        line-height: 26px;
+      }
+    </style>
   </head>
 
   <body>
     <%= htmlWebpackPlugin.options.header %>
-    <section >
+    <div class="breadcrumbs main-container">
+      <span class="item"><a href="">首页</a></span>
+      <span class="item"><a href="">联系我们</a></span>
+    </div>
+    <section class="main-container">
       <div class="section-heading t-c">
         <h2>联系我们</h2>
+        <h3>PCM（PlantChemMed）</h3>
       </div>
       <div class="section-body lianxi-container">
-        <p>
-        PCM（PlantChemMed）<br /><br />
-        联系电话： 13248283690<br /><br />
-        技术支持邮箱：tech@plantchemmed.com<br /><br />
-        商务合作邮箱：marketing@plantchemmed.com<br /><br />
-        技术支持QQ: 3174778776<br /><br />
-        采购QQ：671261901<br /><br />
-        网址：http://www.plantchemmed.com/<br /><br />
-        地址：上海市闵行区吴泾镇放鹤路1088号博济·F1088园区<br /><br />
-    </p>
+        <section class="item">
+          <img src="../images/icon-address.png" alt="">
+          <h4>公司地址</h4>
+          <p>
+            <span class="attr-name">地址：</span>
+            <span class="attr-val">上海市闵行区吴泾镇放鹤路1088号博济·F1088园区</span>
+            <span class="attr-name">网址：</span>
+            <span class="attr-val">http://www.plantchemmed.com/</span>
+          </p>
+        </section>
+        <section class="item">
+          <img src="../images/icon-phone.png" alt="">
+          <h4>联系电话</h4>
+          <p>
+            <span class="attr-name-val">电话：13248283690</span>
+            <span class="attr-name-val">技术支持QQ: 3174778776</span>
+            <span class="attr-name-val">采购QQ：671261901</span>
+          </p>
+        </section>
+        <section class="item">
+          <img src="../images/icon-mail.png" alt="">
+          <h4>企业邮箱</h4>
+          <p>
+            <span class="attr-name">技术支持：</span>
+            <span class="attr-val">tech@plantchemmed.com</span>
+            <span class="attr-name">商务合作邮箱：</span>
+            <span class="attr-val">marketing@plantchemmed.com</span>
+          </p>
+        </section>
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>
