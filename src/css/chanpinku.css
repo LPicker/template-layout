@@ -48,13 +48,12 @@
 }
 .empty-page .card-section-container {
   position: relative;
-  margin-top: 40px;
   margin-left: 28px;
 }
 
 .lanmu-container .empty-page .table-container {
   margin-left: 0;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 .lanmu-container .empty-page .table-container th{
   background-color: transparent;

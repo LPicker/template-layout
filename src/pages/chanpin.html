@@ -23,7 +23,7 @@
       <span class="item"><a href="" style="font-size: 14px">抑制剂及阻断剂</a></span>
       <span class="item"><a href="" style="font-size: 14px">Rotenone</a></span>
     </div>
-    <section class="main-container chanpin-container">
+    <section class="main-container chanpin-container" id="tbody">
       <div class="product-heading">
         <h2 style="color: #333333">KC7F2</h2>
         <span style="color: #333333;font-weight: bold">（中文名称）</span>
@@ -70,7 +70,7 @@
           </div>
 
           <div class="btns-wrapper t-c">
-            <button class="btn btn-warning btn-lg">
+            <button class="btn btn-warning btn-lg" onclick="testclick()">
               <i class="icon-download"></i>
               产品说明书下载
             </button>
@@ -209,7 +209,6 @@
           </div>
         </div>
       </section>
-
       <!-- 相关产品推荐 -->
       <section class="section-container">
         <div class="section-heading t-c">
@@ -309,5 +308,17 @@
       </section>
     </section>
     <%= htmlWebpackPlugin.options.footer %>
+    <script src="../js/html2pdf.bundle.min.js"></script>
+    <script>
+      function testclick(){
+        var element = document.getElementById('tbody');
+        html2pdf().from(element).set({
+          margin: 1,
+          filename: '产品说明书.pdf',
+          html2canvas: {scale: 2,dpi: 92,width:1160},
+          jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
+        }).save();
+      };
+    </script>
   </body>
 </html>

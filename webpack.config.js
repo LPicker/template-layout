@@ -115,6 +115,7 @@ module.exports = function (env, argv) {
       }),
       new TransferWebpackPlugin(
         [
+          { from: "src/js", to: "js" },
           { from: "src/css", to: "css" },
           { from: "src/images", to: "images" },
         ],

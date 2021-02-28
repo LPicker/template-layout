@@ -405,19 +405,22 @@ span {
 
 .card-section-container {
   position: relative;
-  margin-top: 40px;
-  border-top: 2px solid var(--base-color);
 }
 .card-section-heading {
-  position: absolute;
-  top: -42px;
-  left: 0;
   border-top-left-radius: 2px;
   border-top-right-radius: 2px;
   width: 195px;
   background-color: var(--base-color);
   text-align: center;
   color: var(--text-reverse-color);
+}
+.card-section-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--base-color);
 }
 .card-section-heading h2 {
   margin: 0;

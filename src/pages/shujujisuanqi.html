@@ -34,10 +34,15 @@
       border: none;
     }
 
+    fieldset.required {
+      position: relative;
+    }
+
     fieldset legend {
       font-weight: bold;
       font-size: 14px;
     }
+
     fieldset input,
     fieldset select {
       border: 1px solid #d9e9e2;
@@ -49,11 +54,18 @@
       height: 22px;
       padding: 4px 11px;
     }
-    
+
     fieldset select {
-      width: 65px;  
       height: 32px;
       padding: 4px 8px 4px 8px;
+    }
+
+    fieldset.required::after {
+      content: "*";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #f00;
     }
 
     .formula-form .operator {
@@ -66,6 +78,7 @@
     .btns-wrapper {
       margin: 30px 0 45px 0;
     }
+
     .btns-wrapper .btn,
     .btns-wrapper .btn:hover,
     .btns-wrapper .btn:active {
@@ -89,11 +102,11 @@
   <%= htmlWebpackPlugin.options.header %>
     <div class="breadcrumbs main-container">
       <span class="item"><a href="shouye.html">首页</a></span>
-      <span class="item"><a href="">数据计算器</a></span>
-      <span class="item"><a href="">摩尔计算器&稀释计算器</a></span>
+      <span class="item"><a>数据计算器</a></span>
+      <span class="item"><a>摩尔计算器&稀释计算器</a></span>
     </div>
     <section class="main-container of-hidden">
-      <section class="card-section-container">
+      <section class="card-section-container" id="mol-Calc">
         <div class="card-section-heading t-c">
           <h2>摩尔计算器</h2>
         </div>
@@ -101,47 +114,60 @@
           <div class="formula-wrapper t-c">
             Mass(g) = Concentration(mol/L)×Volume(L)×Molecular Weight(g/mol)
           </div>
-          <div class="formula-form">
+          <form class="formula-form" id="molCalc">
             <fieldset>
               <legend>Mass</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mg</option>
+              <input type="text" name="mass">
+              <select name="MassUnits">
+                <option value="-12">pg</option>
+                <option value="-9">ng</option>
+                <option value="-6">μg</option>
+                <option selected value="-3">mg</option>
+                <option value="0">g</option>
+                <option value="3">kg</option>
               </select>
             </fieldset>
             <span class="operator">=</span>
             <fieldset>
               <legend>Concentration</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mM</option>
+              <input type="text" name="concentration">
+              <select name="ConcUnits">
+                <option value="-15">fM</option>
+                <option value="-12">pM</option>
+                <option value="-9">nM</option>
+                <option value="-6">μM</option>
+                <option selected value="-3">mM</option>
+                <option value="0">M</option>
               </select>
             </fieldset>
             <span class="operator">×</span>
             <fieldset>
               <legend>Volume</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mL</option>
+              <input type="text" name="volume">
+              <select name="VolUnits">
+                <option value="-9">nL</option>
+                <option value="-6">μL</option>
+                <option selected value="-3">mL</option>
+                <option value="0">L</option>
               </select>
             </fieldset>
             <span class="operator">×</span>
-            <fieldset>
+            <fieldset class="required">
               <legend>Molecular Weight</legend>
-              <input type="text">
+              <input type="text" name="MolWt">
             </fieldset>
-          </div>
+          </form>
           <div class="btns-wrapper t-c">
-            <button class="btn btn-warning btn-lg">
+            <button class="btn btn-warning btn-lg" onclick="CalcMolarity(molCalc);">
               计算
             </button>
-            <button class="btn btn-success btn-lg">
+            <button class="btn btn-success btn-lg" onclick="resetByForm(molCalc)">
               重置
             </button>
           </div>
         </div>
       </section>
-      <section class="card-section-container">
+      <section class="card-section-container" id="dil-Calc">
         <div class="card-section-heading t-c">
           <h2>稀释计算器</h2>
         </div>
@@ -150,44 +176,59 @@
             <p>Concentration(C1)×Volume(V1)=Concentration(C2)×Volume(V2)</p>
             <p>This equation is commonly abbreviated as: C1*V1 = C2*V2</p>
           </div>
-          <div class="formula-form">
+          <form class="formula-form" id="dilCalc">
             <fieldset>
               <legend>Concentration(C1)</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mM</option>
+              <input type="text" name="concentrationStart">
+              <select name="ConcUnitsStart">
+                <option value="-15">fM</option>
+                <option value="-12">pM</option>
+                <option value="-9">nM</option>
+                <option value="-6">μM</option>
+                <option selected value="-3">mM</option>
+                <option value="0">M</option>
               </select>
             </fieldset>
             <span class="operator">×</span>
             <fieldset>
               <legend>Volume(V1)</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mL</option>
+              <input type="text" name="volumeStart">
+              <select name="VolUnitsStart">
+                <option value="-9">nL</option>
+                <option value="-6">μL</option>
+                <option selected value="-3">mL</option>
+                <option value="0">L</option>
               </select>
             </fieldset>
             <span class="operator">=</span>
             <fieldset>
               <legend>Concentration(C2)</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mM</option>
+              <input type="text" name="concentrationFinal">
+              <select name="ConcUnitsFinal">
+                <option value="-15">fM</option>
+                <option value="-12">pM</option>
+                <option value="-9">nM</option>
+                <option value="-6">μM</option>
+                <option selected value="-3">mM</option>
+                <option value="0">M</option>
               </select>
             </fieldset>
             <span class="operator">×</span>
             <fieldset>
               <legend>Volume(V2)</legend>
-              <input type="text">
-              <select name="">
-                <option value="">mL</option>
+              <input type="text" name="volumeFinal">
+              <select name="VolUnitsFinal">
+                <option value="-6">μL</option>
+                <option selected value="-3">mL</option>
+                <option value="0">L</option>
               </select>
             </fieldset>
-          </div>
+          </form>
           <div class="btns-wrapper t-c">
-            <button class="btn btn-warning btn-lg">
+            <button class="btn btn-warning btn-lg" onclick="CalcDilute(dilCalc)">
               计算
             </button>
-            <button class="btn btn-success btn-lg">
+            <button class="btn btn-success btn-lg" onclick="resetByForm(dilCalc)">
               重置
             </button>
           </div>
@@ -195,6 +236,150 @@
       </section>
     </section>
     <%= htmlWebpackPlugin.options.footer %>
+      <script>
+        function GetUnit(value, ndec) {
+          var factor = Math.pow(10, ndec)
+          if (value < 1e-9) {
+            return "-12";
+          } else if (value < 1e-6) {
+            return "-9";
+          } else if (value < 1e-3) {
+            return "-6";
+          } else if (value < 1) {
+            return "-3";
+          } else {
+            return "0";
+          }
+        }
+
+        function FormatAmount(value, ndec) {
+          var factor = Math.pow(10, ndec)
+          if (value < 1e-9) {
+            return (Math.round((value / 1e-12) * factor) / factor);
+          } else if (value < 1e-6) {
+            return (Math.round((value / 1e-9) * factor) / factor);
+          } else if (value < 1e-3) {
+            return (Math.round((value / 1e-6) * factor) / factor);
+          } else if (value < 1) {
+            return (Math.round((value / 1e-3) * factor) / factor);
+          } else {
+            return (Math.round((value) * factor) / factor);
+          }
+        }
+
+        function CalcMolarity(form) {
+          if (form.MolWt.value == "") {
+            alert("Please enter a value for the Molecular Weight");
+          } else if (form.MassUnits.value < -6) {
+            alert("Cannot use this unit of mass for this calculation");
+          } else {
+            var MassUnits = parseInt(form.MassUnits.value);
+            var ConcUnits = parseInt(form.ConcUnits.value);
+            var VolUnits = parseInt(form.VolUnits.value);
+            var MolWt = parseFloat(form.MolWt.value);
+            if (form.mass.value != '') {
+              var mass = parseFloat(form.mass.value) * Math.pow(10, MassUnits);
+            }
+            if (form.concentration.value != '') {
+              var conc = parseFloat(form.concentration.value) * Math.pow(10, ConcUnits);
+            }
+            if (form.volume.value != '') {
+              var vol = parseFloat(form.volume.value) * Math.pow(10, VolUnits);
+            }
+            if (form.concentration.value == '') {
+              if ((form.volume.value != '') && (form.mass.value != '')) {
+                var moles = mass / MolWt;
+                var conc = moles / vol;
+                form.concentration.value = FormatAmount(conc, 4);
+                form.ConcUnits.value = GetUnit(conc, 4);
+              } else {
+                alert("Not enough information to perform the calculation");
+              }
+            } else if (form.volume.value == '') {
+              if ((form.concentration.value != '') && (form.mass.value != '')) {
+                var moles = mass / MolWt;
+                var vol = moles / conc;
+                form.volume.value = FormatAmount(vol, 4);
+                form.VolUnits.value = GetUnit(vol, 4);
+              } else {
+                alert("Not enough information to perform the calculation");
+              }
+            } else {
+              if ((form.concentration.value != '') && (form.volume.value != '')) {
+                var moles = vol * conc;
+                var mass = moles * MolWt;
+                form.mass.value = FormatAmount(mass, 4);
+                form.MassUnits.value = GetUnit(mass, 4);
+              } else {
+                alert("Not enough information to perform the calculation");
+              }
+            }
+          }
+        }
+
+        function fromartResult(value, selectFristCompany, resultValue, resultCompany) {
+          var companyNumber = GetUnit(value, 4);
+          if (selectFristCompany - companyNumber > 0) {
+            resultValue.value = FormatAmount(value, 4) * Math.pow(0.1, selectFristCompany - companyNumber).toPrecision(6);
+            resultCompany.value = selectFristCompany;
+          } else {
+            resultValue.value = FormatAmount(value, 4).toPrecision(6);
+            resultCompany.value = companyNumber;
+          }
+        }
+
+        function CalcDilute(form) {
+          var ConcUnitsStart = parseInt(form.ConcUnitsStart.value);
+          var VolUnitsStart = parseInt(form.VolUnitsStart.value);
+          var ConcUnitsFinal = parseInt(form.ConcUnitsFinal.value);
+          var VolUnitsFinal = parseInt(form.VolUnitsFinal.value);
+          var checkNull = 0;
+          var startconc = parseFloat(form.concentrationStart.value) * Math.pow(10, ConcUnitsStart);
+          if (!startconc) checkNull++;
+          var volumeStart = parseFloat(form.volumeStart.value) * Math.pow(10, VolUnitsStart);
+          if (!volumeStart) checkNull++;
+          var finalconc = parseFloat(form.concentrationFinal.value) * Math.pow(10, ConcUnitsFinal);
+          if (!finalconc) checkNull++;
+          var volumeFinal = parseFloat(form.volumeFinal.value) * Math.pow(10, VolUnitsFinal);
+          if (!volumeFinal) checkNull++;
+          if (checkNull > 1) {
+            alert("Please fill in three blanks.");
+            return;
+          } else if (checkNull == 0) {
+            alert("Please leave one item blank.");
+            return;
+          }
+          if (!startconc) {
+            //startconc*volumeStart=finalconc*volumeFinal;
+            var VolNeeded = finalconc * volumeFinal / volumeStart;
+            fromartResult(VolNeeded, form.ConcUnitsStart.options[0].value, form.concentrationStart, form.ConcUnitsStart)
+            return;
+          }
+          if (!volumeStart) {
+            var VolNeeded = finalconc * volumeFinal / startconc;
+            fromartResult(VolNeeded, form.VolUnitsStart.options[0].value, form.volumeStart, form.VolUnitsStart)
+            return;
+          }
+          if (!finalconc) {
+            var VolNeeded = startconc * volumeStart / volumeFinal;
+            fromartResult(VolNeeded, form.ConcUnitsFinal.options[0].value, form.concentrationFinal, form.ConcUnitsFinal)
+            return;
+          }
+          if (!volumeFinal) {
+            var VolNeeded = startconc * volumeStart / finalconc;
+            fromartResult(VolNeeded, form.VolUnitsFinal.options[0].value, form.volumeFinal, form.VolUnitsFinal)
+            return;
+          }
+          alert("Please leave one item blank.");
+        }
+
+        function resetByForm(form) {
+          var inputs = form.querySelectorAll("input")
+          inputs.forEach(function (input) {
+            input.value = "";
+          });
+        }
+      </script>
 </body>
 
 </html>
