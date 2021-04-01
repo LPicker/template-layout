@@ -10,8 +10,23 @@
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" rel="stylesheet"/>
     <link href="../css/layout.css" rel="stylesheet"/>
     <link href="../css/chanpinku.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
+    <div class="suspension">
+      <div class="suspension-box">
+        <a href="#" class="a a-service "><i class="i"></i></a>
+        <a href="javascript:;" class="a a-top"><i class="i"></i></a>
+        <div class="d d-service">
+          <i class="arrow"></i>
+          <div class="inner-box">
+            <div class="d-service-item clearfix">
+              <a href="tencent://message/?uin=664184741&Site=Sambow&Menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= htmlWebpackPlugin.options.header %>
     <div class="breadcrumbs main-container">
       <span class="item"><a href="shouye.html" style="font-size: 14px">首页</a></span>
@@ -112,6 +127,45 @@
         var url = "";
         window.location = url + "?page=" + pageNum;
       }
+
     </script>
+  <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      /* ----- 侧边悬浮 ---- */
+      $(document).on("mouseenter", ".suspension .a", function(){
+        var _this = $(this);
+        var s = $(".suspension");
+        var isService = _this.hasClass("a-service");
+        var isServicePhone = _this.hasClass("a-service-phone");
+        var isQrcode = _this.hasClass("a-qrcode");
+        if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+        if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+        if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+      });
+      $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+        $(".suspension").find(".d").hide();
+      });
+      $(document).on("mouseenter", ".suspension .a-top", function(){
+        $(".suspension").find(".d").hide();
+      });
+      $(document).on("click", ".suspension .a-top", function(){
+        $("html,body").animate({scrollTop: 0});
+      });
+      $(window).scroll(function(){
+        var st = $(document).scrollTop();
+        var $top = $(".suspension .a-top");
+        if(st > 400){
+          $top.css({display: 'block'});
+        }else{
+          if ($top.is(":visible")) {
+            $top.hide();
+          }
+        }
+      });
+
+    });
+  </script>
   </body>
 </html>

@@ -37,6 +37,14 @@
   margin-bottom: 0;
   text-indent: 2em;
 }
+.chanpin-container td p {
+  margin-bottom: 0;
+  text-indent: 0em;
+  text-align:left
+}
+p-test {
+  margin-bottom: 0;
+}
 .summary-container {
   width: 100%;
 }

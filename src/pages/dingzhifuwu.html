@@ -7,12 +7,6 @@
     <title>抑制剂_阻断剂_小分子_科研产品- PlantChemMed</title>
     <meta name="description" content="PlantChemMed，一个聚焦多种科研产品服务平台，提供抑制剂、阻断剂、小分子等行业相关丰富的产品信息，为全球科技事业和工业领域客户提供系统的产品资源及配套技术服务。">
     <meta name="keywords" content="科研产品，抑制剂、阻断剂、小分子、PlantChemMed">
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css"
-      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-      crossorigin="anonymous"
-    /> -->
     <link rel="stylesheet" href="../css/layout.css" />
     <style>
       .main-container h2 {
@@ -76,10 +70,78 @@
         text-align: center;
         font-weight: bold;
       }
+      @-webkit-keyframes slideIn {
+        0% {top: -60px;}
+        100% {top: 40px;}
+      }
+      @keyframes slideIn {
+        0% {top: -60px;}
+        100% {top: 40px;}
+      }   
+      @-webkit-keyframes slideOut {
+        0% {top: 40px;}
+        100% {top: -60px;}
+      }
+      @keyframes slideOut {
+        0% {top: 40px;}
+        100% {top: -60px;}
+      }
+      .alert {
+        position: fixed;
+        top: -60px;
+        left: 50%;
+        transform: translate(-50%, 0px);
+        font-size: 14px;
+        line-height: 1.68;
+        border-radius: 4px;
+        z-index: 9999;
+        transition: all .5s;
+        max-width: 90%;
+        width: auto;
+        height: auto;
+        border: none;
+        padding: 12px 36px;
+        text-align: center;
+        box-shadow: 0 0 8px #999;
+        z-index: 999999999;
+      }
+      .alert-success {
+        background-color: #dff0d8;
+        color: #3c763d;
+      }
+      .alert-warning {
+        background-color: #fff5e7;
+        color: #f08c0b;
+      }
+      .slideIn {
+        top: 40px;
+        -webkit-animation: 150ms ease 0s 1 normal none running slideIn;
+        animation: 150ms ease 0s 1 normal none running slideIn;
+      }
+      .slideOut {
+        top: -60px;
+        -webkit-animation: 150ms ease 0s 1 normal none running slideOut;
+        animation: 150ms ease 0s 1 normal none running slideOut;
+      }
     </style>
+    <link rel="stylesheet" href="../css/style.css">
   </head>
 
   <body>
+    <div class="suspension">
+      <div class="suspension-box">
+        <a href="#" class="a a-service "><i class="i"></i></a>
+        <a href="javascript:;" class="a a-top"><i class="i"></i></a>
+        <div class="d d-service">
+          <i class="arrow"></i>
+          <div class="inner-box">
+            <div class="d-service-item clearfix">
+              <a href="tencent://message/?uin=664184741&Site=Sambow&Menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= htmlWebpackPlugin.options.header %>
     <div class="breadcrumbs main-container">
       <span class="item"><a href="shouye.html">首页</a></span>
@@ -94,39 +156,39 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">联系方式</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="联系方式">
             </div>
             <div class="required-text">*必填</div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">姓名</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="xingming">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">产品名称</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="chanpinmingcheng">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">CAS</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="CAS">
             </div>
             <div class="required-text">*必填</div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">定制规格</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="dingzhiguige">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">期望价格</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" name="qiwangjiage">
             </div>
           </div>
           <div class="btns-wrapper t-c">
@@ -136,6 +198,130 @@
       </div>
     </section>
     <%= htmlWebpackPlugin.options.footer %>
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        /* ----- 侧边悬浮 ---- */
+        $(document).on("mouseenter", ".suspension .a", function(){
+          var _this = $(this);
+          var s = $(".suspension");
+          var isService = _this.hasClass("a-service");
+          var isServicePhone = _this.hasClass("a-service-phone");
+          var isQrcode = _this.hasClass("a-qrcode");
+          if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+          if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+          if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+        });
+        $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+          $(".suspension").find(".d").hide();
+        });
+        $(document).on("mouseenter", ".suspension .a-top", function(){
+          $(".suspension").find(".d").hide();
+        });
+        $(document).on("click", ".suspension .a-top", function(){
+          $("html,body").animate({scrollTop: 0});
+        });
+        $(window).scroll(function(){
+          var st = $(document).scrollTop();
+          var $top = $(".suspension .a-top");
+          if(st > 400){
+            $top.css({display: 'block'});
+          }else{
+            if ($top.is(":visible")) {
+              $top.hide();
+            }
+          }
+        });
+
+      });
+    </script>
+    <script>
+      var Message = (function () {
+        var isInited = false;
+        var timer;
+        var during = 5000;
+        var container;
+        var body = document.body;
+
+        function createElement(obj) {
+          var node = document.createElement(obj.tagName);
+          if (obj.className) {
+            node.className = obj.className;
+          }
+          if (obj.textContent) {
+            node.textContent = obj.textContent;
+          }
+          return node;
+        }
+
+        function init() {
+          close();
+          if (isInited) {
+            return;
+          }
+          isInited = true;
+          container = createElement({
+            tagName: "div",
+            className: "alert"
+          });
+          body.appendChild(container);
+        }
+
+        function close(cls) {
+          if (!container) {
+            return;
+          }
+          if (cls) {
+            container.classList.remove.apply(container.classList, cls);
+            container.classList.add("slideOut");
+          } else {
+            container.className = "alert";
+          }
+        }
+
+        function timedClose(cls) {
+          clearTimeout(timer);
+          timer = setTimeout(function () {
+            close(cls);
+          }, during);
+        }
+
+        return {
+          success: function (obj) {
+            init();
+            var cls = ["alert-success", "slideIn"];
+            container.textContent = obj.msg;
+            container.classList.remove("slideOut");
+            container.classList.add.apply(container.classList, cls);
+            timedClose(cls);
+          },
+          error: function (obj) {
+            init();
+            var cls = ["alert-warning", "slideIn"];
+            container.textContent = obj.msg;
+            container.classList.remove("slideOut");
+            container.classList.add.apply(container.classList, cls);
+            timedClose(cls);
+          }
+        }
+      })();
+
+      var submitBtn = document.querySelector("button[type='submit']");
+      submitBtn.onclick = function (evt) {
+        evt.preventDefault();
+        if (!submitBtn.flag) {
+          Message.success({
+            msg: "提交成功"
+          });
+        } else {
+          Message.error({
+            msg: "提交失败"
+          });
+        }
+        submitBtn.flag = !submitBtn.flag;
+      }
+    </script>
   </body>
 
 </html>

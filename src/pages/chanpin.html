@@ -14,9 +14,24 @@
     />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/chanpin.css" />
+    <link rel="stylesheet" href="../css/style.css" />
   </head>
 
   <body>
+    <div class="suspension">
+      <div class="suspension-box">
+        <a href="#" class="a a-service "><i class="i"></i></a>
+        <a href="javascript:;" class="a a-top"><i class="i"></i></a>
+        <div class="d d-service">
+          <i class="arrow"></i>
+          <div class="inner-box">
+            <div class="d-service-item clearfix">
+              <a href="tencent://message/?uin=664184741&Site=Sambow&Menu=yes" class="clearfix"><span class="circle"><i class="i-qq"></i></span><h3>咨询在线客服</h3></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <%= htmlWebpackPlugin.options.header %>
     <div class="breadcrumbs main-container">
       <span class="item"><a href="" style="font-size: 14px">首页</a></span>
@@ -91,12 +106,9 @@
           <table>
             <tr>
               <td colspan="2" height="148px">
-                <p style="text-align:left">
-                  Ginsenoside Rc exhib alert-warning antcjsd, It catn fsda,as fas dfasdf,ant i want to do this.Nobody can do that.Ginsenoside Rc exhib
-                  alert-warning antcjsd, It catn fsda,as fas dfasdf,ant i want to do this.Nobody can do that.Ginsenoside Rc exhib alert-warning antcjsd, It catn
-                  fsda,as fas dfasdf,ant i want to do this.Nobody can do that.Ginsenoside Rc exhib alert-warning antcjsd, It catn fsda,as fas dfasdf,ant i want
-                  to do this.Nobody can do that.
-                </p>
+
+                <p>TBHQ (tert-Butylhydroquinone) 是一种广泛使用的 Nrf2 激活剂，通过激活 Nrf2 来免受 Doxorubicin (DOX)-诱导的心脏毒性。
+                TBHQ (tert-Butylhydroquinone) 也是一种 ERK 激活剂，逆转 Dehydrocorydaline (DHC) 对黑素瘤细胞增殖的抑制作用。</p >
               </td>
             </tr>
             <tr>
@@ -105,7 +117,9 @@
             </tr>
             <tr>
               <td  class="td-left">分子量</td>
-              <td style="text-align: left;padding-left: 20px">1218942-37-0</td>
+              <td style="text-align: left;padding-left: 20px">
+                <p>C<sub>45</sub>H<sub>73</sub>NO<sub>15</sub></p>
+              </td>
             </tr>
             <tr>
               <td  class="td-left">分子式</td>
@@ -319,6 +333,45 @@
           jsPDF: {orientation: 'portrait', unit: 'in', format: 'letter', compressPDF: true}
         }).save();
       };
+
+    </script>
+    <script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        /* ----- 侧边悬浮 ---- */
+        $(document).on("mouseenter", ".suspension .a", function(){
+          var _this = $(this);
+          var s = $(".suspension");
+          var isService = _this.hasClass("a-service");
+          var isServicePhone = _this.hasClass("a-service-phone");
+          var isQrcode = _this.hasClass("a-qrcode");
+          if(isService){ s.find(".d-service").show().siblings(".d").hide();}
+          if(isServicePhone){ s.find(".d-service-phone").show().siblings(".d").hide();}
+          if(isQrcode){ s.find(".d-qrcode").show().siblings(".d").hide();}
+        });
+        $(document).on("mouseleave", ".suspension, .suspension .a-top", function(){
+          $(".suspension").find(".d").hide();
+        });
+        $(document).on("mouseenter", ".suspension .a-top", function(){
+          $(".suspension").find(".d").hide();
+        });
+        $(document).on("click", ".suspension .a-top", function(){
+          $("html,body").animate({scrollTop: 0});
+        });
+        $(window).scroll(function(){
+          var st = $(document).scrollTop();
+          var $top = $(".suspension .a-top");
+          if(st > 400){
+            $top.css({display: 'block'});
+          }else{
+            if ($top.is(":visible")) {
+              $top.hide();
+            }
+          }
+        });
+
+      });
     </script>
   </body>
 </html>
